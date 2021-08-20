@@ -1,6 +1,33 @@
 # Cordova Native Audio Plugin
 
-Cordova / PhoneGap 3.5+ extension for Native Audio playback, aimed at HTML5 gaming and audio applications which require minimum latency, polyphony and concurrency.
+Cordova / PhoneGap 3.5+ Ionic 5 extension for Native Audio playback, aimed at HTML5 gaming and audio applications which require minimum latency, polyphony and concurrency.
+
+# Example How to use in ionic 5 and vue 3
+
+1. You need to place your audio folder in the public folder in the root of the ionic project 
+2. npm install cordova-plugin-nativeaudio2
+3. npm install @ionic-native/native-audio
+4. ionic cap sync
+
+
+
+```vue
+<script lang="ts">
+import {NativeAudio} from '@ionic-native/native-audio';
+
+export default defineComponent({
+  name: 'App',
+  setup() {
+    NativeAudio.preloadSimple('sound', 'public/audio/you_sound.wav').then((data) => {
+      console.log('success', data);
+    },
+    (data) => {
+      console.log('error', data);
+    });
+  }
+});
+</script>
+```
 
 ## Contents
 
